@@ -1,0 +1,15 @@
+on:
+  push:
+    branches:
+      - main
+name: release-please
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: GoogleCloudPlatform/release-please-action@v2
+        with:
+          release-type: simple
+          default-branch: main
+          package-name: release-please-action
+          changelog-types: '[{"type":"feat","section":"🚀 Features","hidden":false},{"type":"fix","section":"🐛 Bug Fixes","hidden":false},{"type":"docs","section":"📄 Documents","hidden":false},{"type":"refactor","section":"🔨 Refactor","hidden":false},{"type":"content","section":"🎨 Content","hidden":false}]'
